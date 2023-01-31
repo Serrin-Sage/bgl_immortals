@@ -1,10 +1,9 @@
-import Header from "./Header"
-
+import MainContent from "./MainContent"
 const MainPage = () => {
 
   return (
     <div className="main-page-container">
-      <Header />
+      <MainContent />
     </div>
   )
 }

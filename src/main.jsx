@@ -7,6 +7,8 @@ import userSlice from './features/user'
 import App from './App'
 import './index.css'
 import './stylesheets/landingpage.css'
+import './stylesheets/header.css'
+import './stylesheets/mainpage.css'
 
 const store = configureStore({
   reducer: {
