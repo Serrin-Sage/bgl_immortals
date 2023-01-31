@@ -3,6 +3,10 @@
     background-color: blueviolet;
     /* #cb3494 */
 }
+.main-content-container {
+    display: flex;
+    flex-direction: column;
+}
 
 .main-content-tabs{
     display: flex;
@@ -20,3 +24,4 @@
     text-align: center;
     cursor: pointer;
 }
+
