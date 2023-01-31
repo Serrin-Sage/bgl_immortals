@@ -3,14 +3,24 @@ import Immortals from "./Immortals"
 import Merits from "./Merits"
 import Games from "./Games"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 
 const MainContent = () => {
     const [showContent, setShowContent] = useState("About")
+    const [selectedCategory, setSelectedCategory] = useState("")
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (selectedCategory === "") navigate("/home")
+    }, [selectedCategory])
+
 
     const selectContent = (clickedCategory) => {
         setShowContent(clickedCategory)
-        history.pushState(clickedCategory, '', `/home/${clickedCategory}`)
+        setSelectedCategory(clickedCategory)
+        // history.pushState(clickedCategory, '', `/home/${clickedCategory}`)
     }
     
     return (
