@@ -1,0 +1,22 @@
+.main-page-container {
+    height: 100vh;
+    background-color: blueviolet;
+    /* #cb3494 */
+}
+
+.main-content-tabs{
+    display: flex;
+    width: 100%;
+    min-height: 70px;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: blueviolet;
+    color: #fff;
+    font-size: 25px;
+}
+
+.content-tab {
+    min-width: 120px;
+    text-align: center;
+    cursor: pointer;
+}
