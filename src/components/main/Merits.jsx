@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
 import MeritDisplay from "./MeritDisplay"
-
+import ScrollButton from "../../features/ScrollButton"
 const Merits = () => {
     const [allMerits, setAllMerits] = useState([])
+
     let characterMerits = []
     let designMerits = []
 
@@ -50,6 +50,7 @@ const Merits = () => {
                 <MeritDisplay meritArray={characterMerits} meritCategory="Character" id="Character"/>
                 <MeritDisplay meritArray={designMerits} meritCategory="Design" id="Desgin"/>
             </div>
+            <ScrollButton />
         </div>
     )
 }
