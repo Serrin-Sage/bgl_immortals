@@ -2,20 +2,73 @@
     
 }
 
+.merit-page-navbar {
+    display: flex;
+    border-radius: 20px;
+    justify-content: space-evenly;
+    /* box-shadow: 0 0 10px 1px black; */
+    margin: 2rem;
+    padding: 1rem;
+    font-size: 28px;
+}
+.navbar-tab {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 16px;
+
+}
+#character-tab {
+    background-color: grey;
+}
+#design-tab {
+    background-color: purple;
+}
+#virtue-tab {
+    background-color: blue;
+}
+#tactical-tab {
+    background-color: red;
+}
+#dedication-tab {
+    background-color: brown;
+}
+#research-tab{
+    background-color: orange;
+}
+#victory-tab {
+    background-color: green;
+}
+#experience-tab {
+    background-color: lightblue;
+}
+
 .merit-page-content {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     max-width: 100vw;
 }
 
+.merit-display {
+    margin: 1rem;
+}
+
+.merit-category-title {
+    color: #fff;
+    font-size: 35px;
+    text-decoration: underline;
+}
+
 .merit-list-container {
+    display: flex;
+    flex-wrap: wrap;
     margin: 1rem;
 }
 
 .merit-content{
     display: flex;
     align-items: center;
-    margin: 25px 0 25px 0;
+    margin: 25px 2rem 25px 0;
 
 }
 
