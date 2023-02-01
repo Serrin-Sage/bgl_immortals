@@ -11,6 +11,7 @@ const MeritCard = ({merit}) => {
               {hoverOver ? <div className="hover-text">{merit.name}</div> : null}
           </div>
           <div className="merit-description" id={`${merit.color}-description`}>
+              <div className="div-arrow" id={`${merit.color}-arrow`}></div>
               <p className="merit-text">{merit.description}</p>
           </div>
       </div>
