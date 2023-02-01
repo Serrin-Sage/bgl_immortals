@@ -24,22 +24,22 @@
     background-color: purple;
 }
 #virtue-tab {
-    background-color: blue;
+    background-color: rgb(29, 29, 217);
 }
 #tactical-tab {
-    background-color: red;
+    background-color: rgb(173, 20, 20);
 }
 #dedication-tab {
-    background-color: brown;
+    background-color: #683400;
 }
 #research-tab{
-    background-color: orange;
+    background-color: rgb(210, 112, 0);
 }
 #victory-tab {
-    background-color: green;
+    background-color: rgb(22, 161, 22);
 }
 #experience-tab {
-    background-color: lightblue;
+    background-color: rgb(35, 156, 197);
 }
 
 .merit-page-content {

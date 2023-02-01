@@ -4,4 +4,14 @@ body {
   height: 100vh;
 }
 
+.scroll-up-btn {
+  bottom: 0;
+  right: 50%;
+  position: fixed;
+  height: 50px;
+  width: 50px;
+  z-index: 1;
+  background-color: red;
+}
+
 
