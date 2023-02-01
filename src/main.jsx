@@ -10,6 +10,7 @@ import './stylesheets/landingpage.css'
 import './stylesheets/header.css'
 import './stylesheets/mainpage.css'
 import './stylesheets/meritpage.css'
+import './stylesheets/immortalpage.css'
 
 const store = configureStore({
   reducer: {

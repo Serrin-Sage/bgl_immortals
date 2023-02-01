@@ -26,23 +26,23 @@ const MainContent = () => {
     return (
         <div className="main-content-container">
             <div className="main-content-tabs">
-                <div className="content-tab" onClick={() => selectContent("About")}>
+                <div className="content-tab" id={showContent === "About" ? "active-tab" : "inactive"} onClick={() => selectContent("About")}>
                     About
                 </div>
-                <div className="content-tab" onClick={() => selectContent("Immortals")}>
+                <div className="content-tab" id={showContent === "Immortals" ? "active-tab" : "inactive"} onClick={() => selectContent("Immortals")}>
                     The Immortals
                 </div>
-                <div className="content-tab" onClick={() => selectContent("Merits")}>
+                <div className="content-tab" id={showContent === "Merits" ? "active-tab" : "inactive"} onClick={() => selectContent("Merits")}>
                     Merits
                 </div>
-                <div className="content-tab" onClick={() => selectContent("Games")}>
+                <div className="content-tab" id={showContent === "Games" ? "active-tab" : "inactive"} onClick={() => selectContent("Games")}>
                     Games
                 </div>
                 {/* <div className="content-tab">
                     Test
                 </div> */}
             </div>
-            <div>
+            <div className="main-content">
                 {showContent === "About" ? <About /> : null }
                 {showContent === "Immortals" ? <Immortals /> : null }
                 {showContent === "Merits" ? <Merits /> : null }

@@ -1,0 +1,28 @@
+.immortal-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.immortal-page-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 900px;
+    margin: 4rem;
+    border-radius: 15px;
+    box-shadow: 0 0 6rem 8px rgba(0, 0, 0, 0.628);
+}
+
+.immortal-house-content {
+    margin: 1.5rem;
+}
+
+.immortal-page-icon {
+
+}
+
+.immortal-image {
+    border-radius: 50%;
+    max-height: 180px;
+    border: solid 4px gold;
+}

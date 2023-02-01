@@ -6,6 +6,7 @@
 .main-content-container {
     display: flex;
     flex-direction: column;
+    
 }
 
 .main-content-tabs{
@@ -14,14 +15,47 @@
     min-height: 70px;
     justify-content: space-evenly;
     align-items: center;
-    background-color: blueviolet;
-    color: #fff;
+    background-color: rgb(228, 220, 220);
+    color: black;
     font-size: 25px;
+    font-weight: bold;
+    border-top: solid 4px purple;
+   
 }
 
 .content-tab {
-    min-width: 120px;
+    min-width: 150px;
     text-align: center;
+    padding: 1.4rem 25px 1.6rem 25px;
     cursor: pointer;
+    margin-top: 5px;
+    transition: 0.45s;
+}
+
+#inactive {
+    background-color: rgb(226, 153, 43);
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    border: solid 4px black;
+    border-bottom: solid 4px transparent;
+    color: black;
+    transform: translateY(2px);
+    z-index: 1;
+}
+
+#active-tab {
+    background-color: blueviolet;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    border: solid 4px purple;
+    border-bottom: solid 4px blueviolet;
+    transform: translateY(4.2px);
+    z-index: 2;
+}
+
+.main-content {
+    border-top: solid 4px purple;
+    z-index: 1;
+    
 }
 
