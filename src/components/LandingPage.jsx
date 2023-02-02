@@ -16,16 +16,16 @@ const LandingPage = () => {
         <img src="src/images/Redmoon-solid.png" alt="Redmoon Logo" id="redmoon-logo"/>
       </div>
       <div className="">
-        <img src="src/images/Dyre-solid.png" alt="Redmoon Logo" id="dyre-logo"/>
+        <img src="src/images/Oakfist-solid.png" alt="Redmoon Logo" id="dyre-logo"/>
       </div>
       <div className="">
-        <img src="src/images/Oakfist-solid.png" alt="Oakfist Logo" id="oakfist-logo"/>
+        <img src="src/images/Parchwik-solid.png " alt="Oakfist Logo" id="oakfist-logo"/>
       </div>
       <div className="">
-        <img src="src/images/Parchwik-solid.png" alt="Parchwik Logo" id="parchwik-logo"/>
+        <img src="src/images/Irongate-solid.png" alt="Parchwik Logo" id="parchwik-logo"/>
       </div>
       <div className="">
-        <img src="src/images/Irongate-solid.png" alt="Irongate Logo" id="irongate-logo"/>
+        <img src="src/images/Dyre-solid.png " alt="Irongate Logo" id="irongate-logo"/>
       </div>
     </div>
   )

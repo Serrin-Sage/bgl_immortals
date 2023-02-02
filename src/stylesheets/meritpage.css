@@ -83,7 +83,7 @@
     
 }
 .merit-image {
-    max-height: 50px;
+    max-height: 55px;
 }
 .hover-text {
     position: absolute;
@@ -119,6 +119,7 @@
     margin: 0;
 }
 
+/*** CHARACTER MERITS ***/
 #grey {
     background: linear-gradient(100deg,rgb(138, 138, 138), rgb(37, 37, 37));
     border: solid 2px rgb(70, 70, 70);
@@ -129,11 +130,22 @@
 #grey-arrow {
     border-right: solid 10px rgb(120, 120, 120);
 }
-
+/*** DESIGN MERITS ***/
 #purple {
     background: linear-gradient(100deg, purple, rgb(61, 3, 61));
     border: solid 2px purple;
 }
 #purple-description {
     background-color: purple;
+}
+#purple-arrow {
+    border-right: solid 10px purple;
+}
+/*** VIRTUE MERITS ***/
+#blue {
+    background: linear-gradient(100deg, rgb(29, 29, 217), rgb(6, 6, 125));
+    border: solid 2px rgb(29, 29, 217);
+}
+#blue-description {
+    background-color: rgb(29, 29, 217);
 }
