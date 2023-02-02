@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { getLinkType } from "../../features/linkType"
 
 const Header = () => {
+  const dispatch = useDispatch()
 
   return (
     <div className="header-container">
@@ -13,8 +16,8 @@ const Header = () => {
       <div className="header-item">
         <div className="link-container">
           <a href= "https://brooklyngamelab.com/" target="_blank" className="header-link-text">Main Site</a>
-          <Link to="" className="header-link-text">Register</Link>
-          <Link to="" className="header-link-text">Login</Link>
+          <Link to="/student_or_instructor" className="header-link-text" onClick={() => {dispatch(getLinkType({type: "Register"}))}}>Register</Link>
+          <Link to="/student_or_instructor" className="header-link-text" onClick={() => { dispatch(getLinkType({ type: "Login" })) }}>Login</Link>
         </div>
       </div>
     </div>

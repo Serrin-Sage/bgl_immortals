@@ -4,6 +4,10 @@ body {
   height: 100vh;
 }
 
+.App {
+  height: 100vh;
+}
+
 .scroll-up-btn {
   bottom: 0;
   right: 50%;
