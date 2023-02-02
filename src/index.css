@@ -8,10 +8,16 @@ body {
   bottom: 0;
   right: 50%;
   position: fixed;
-  height: 50px;
-  width: 50px;
   z-index: 1;
-  background-color: red;
+  cursor: pointer;
+}
+
+.scroll-arrow{
+  color: rgb(168, 14, 179);
+  height: 55px;
+  width: 55px;
+  background-color: rgba(255, 255, 255, 0.657);
+  border-radius: 50%;
 }
 
 
