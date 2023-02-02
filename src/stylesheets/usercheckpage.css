@@ -1,0 +1,45 @@
+.user-check-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: inherit;
+    background-color: blueviolet;
+    cursor: default;
+}
+
+.user-check-content{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 60%;
+}
+
+.page-break {
+    min-height: 80vh;
+    min-width: 4px;
+    background-color: rgb(235, 235, 235);
+}
+
+.user-select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+    min-width: 500px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#parent-student-select:hover {
+    min-width: 80%;
+    font-size: 35px;
+}
+
+#instructor-select:hover {
+    min-width: 80%;
+    font-size: 35px;
+}
