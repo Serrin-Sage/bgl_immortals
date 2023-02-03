@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import userSlice from './features/user'
 import linkSlice from './features/linkType'
 import userTypeSlice from './features/userType'
+import statusSlice from './features/loginStatus'
 
 import App from './App'
 import './index.css'
@@ -21,6 +22,7 @@ const store = configureStore({
     user: userSlice,
     link: linkSlice,
     usertype: userTypeSlice,
+    status: statusSlice,
   }
 })
 

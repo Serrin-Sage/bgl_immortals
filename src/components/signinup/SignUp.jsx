@@ -4,7 +4,13 @@ const SignUp = () => {
   const whichUser = useSelector((state) => state.usertype.value)
   console.log(whichUser.usertype)
   return (
-    <div>SignUp</div>
+    <div>
+      <div>
+        <form>
+          
+        </form>
+      </div>
+    </div>
   )
 }
 
