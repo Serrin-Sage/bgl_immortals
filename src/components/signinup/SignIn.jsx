@@ -1,8 +1,12 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
+import { loginStatus } from "../../features/loginStatus"
 
 const SignIn = () => {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
   const whichUser = useSelector((state) => state.usertype.value)
-  console.log(whichUser.usertype)
+  let userCode = whichUser.usertype === "instructor" ? "instructor_code" : "parent_code"
 
   const loginUser = async (e) => {
     e.preventDefault()
@@ -13,17 +17,18 @@ const SignIn = () => {
         "Accept": "application/json"
       },
       body: JSON.stringify({
-        instructor_code: e.target.code.value,
+        [userCode]: e.target.code.value,
         email: e.target.email.value,
         password: e.target.password.value,
       })
     })
     let res = await req.json()
     if (req.ok) {
-      console.log(res)
+      dispatch(loginStatus({ loggedIn: true }))
+      navigate(`/${whichUser.usertype}_page`)
     }
     else {
-      console.log("ERROR, UNABLE TO SIGN IN")
+      console.log(res.error)
     }
   }
   return (
