@@ -5,6 +5,8 @@ import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 import userSlice from './features/user'
 import linkSlice from './features/linkType'
+import userTypeSlice from './features/userType'
+
 import App from './App'
 import './index.css'
 import './stylesheets/landingpage.css'
@@ -18,6 +20,7 @@ const store = configureStore({
   reducer: {
     user: userSlice,
     link: linkSlice,
+    usertype: userTypeSlice,
   }
 })
 
