@@ -2,14 +2,17 @@ import { Link, useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { getLinkType } from "../../features/linkType"
 import { loginStatus } from "../../features/loginStatus"
+import { logout } from "../../features/user"
 
 const Header = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const checkStatus = useSelector((state) => state.status.value)
+  const whichUser = useSelector((state) => state.usertype.value)
 
   const handleLogout = () => {
     dispatch(loginStatus({ loggedIn: false }))
+    dispatch(logout())
     navigate("/home")
   }
 
@@ -25,7 +28,7 @@ const Header = () => {
         {checkStatus.loggedIn ? 
           <div className="link-container">
             <a href="https://brooklyngamelab.com/" target="_blank" className="header-link-text">Main Site</a>
-            <Link className="header-link-text">Profile</Link>
+            <Link to={`/${whichUser.usertype}_page`}className="header-link-text">Profile</Link>
             <div className="header-link-text" onClick={handleLogout}>Logout</div>
           </div> 
           : 

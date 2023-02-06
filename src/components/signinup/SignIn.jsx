@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { loginStatus } from "../../features/loginStatus"
+import { login } from "../../features/user"
 
 const SignIn = () => {
   const navigate = useNavigate()
@@ -25,6 +26,7 @@ const SignIn = () => {
     let res = await req.json()
     if (req.ok) {
       dispatch(loginStatus({ loggedIn: true }))
+      dispatch(login(res))
       navigate(`/${whichUser.usertype}_page`)
     }
     else {
