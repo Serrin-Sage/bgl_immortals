@@ -49,6 +49,7 @@
     font-size: 22px;
     border: none;
     padding-left: 10px;
+    margin-right: 10px;
 }
 .user-input:focus {
     outline: solid 2px gold;
