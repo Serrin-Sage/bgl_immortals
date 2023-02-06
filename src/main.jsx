@@ -17,6 +17,7 @@ import './stylesheets/meritpage.css'
 import './stylesheets/immortalpage.css'
 import './stylesheets/usercheckpage.css'
 import './stylesheets/instructorpage.css'
+import './stylesheets/signinuppage.css'
 
 const store = configureStore({
   reducer: {
