@@ -16,6 +16,7 @@ import './stylesheets/mainpage.css'
 import './stylesheets/meritpage.css'
 import './stylesheets/immortalpage.css'
 import './stylesheets/usercheckpage.css'
+import './stylesheets/instructorpage.css'
 
 const store = configureStore({
   reducer: {

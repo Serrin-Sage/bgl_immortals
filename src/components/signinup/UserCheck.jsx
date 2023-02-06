@@ -7,7 +7,6 @@ const UserCheck = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const linkType = useSelector((state) => state.link.value)
-  console.log(linkType.type)
 
   const userSelect = ( selectedUser ) => {
     dispatch(changeUserType({ usertype: selectedUser }))
