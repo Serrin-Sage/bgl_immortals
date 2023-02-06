@@ -1,9 +1,15 @@
-const StudentCard = ({ student }) => {
+import { useState } from "react"
 
+const StudentCard = ({ student }) => {
     return (
-        <div>
-            {student.name}
-        </div>
+        <tr>
+           <td>{student.name}</td>
+           <td>{student.user === null ? "------" : student.user.name}</td>
+           <td>{student.age}</td>
+           <td>{student.immortal_house}</td>
+           <td>{student.level}</td>
+           <td>"MERITS"</td>
+        </tr>
     )
 }
 

@@ -47,6 +47,7 @@
     flex-wrap: wrap;
     flex-direction: column;
     max-width: 100vw;
+    background-color: blueviolet;
 }
 
 .merit-display {

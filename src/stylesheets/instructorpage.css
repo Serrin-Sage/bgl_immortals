@@ -1,8 +1,9 @@
 .instructor-page-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     background-color: blueviolet;
+
 }
 
 .instructor-tabs {
@@ -19,5 +20,33 @@
 }
 
 .instrcutor-page-content {
-    
+    border-top: solid 4px purple;
+    height: 100vh;
+    z-index: 1;
+}
+
+
+.student-table-container {
+    margin: 2rem;
+    cursor: default;
+}
+.student-table tr {
+    text-align: center;
+}
+.student-table th{
+    font-size: 25px;
+    min-width: 200px;
+    border: solid 3px purple;
+    background-color: #e2992b;
+    color: #fff;
+}
+.student-table td {
+    font-size: 20px;
+    padding: 10px;
+    border: solid 2px black;
+    color: #fff;
+    cursor: pointer;
+}
+.student-table td:hover {
+    background-color: rgb(100, 29, 166);
 }
