@@ -42,7 +42,7 @@ const SignIn = () => {
       <div className="signinup-content">
         <h1>Sign In</h1>
         <form onSubmit={loginUser} onFocus={() => setShowError(false)}>
-          <input type="text" name="code" placeholder="Instructor ID" className="user-input"/>
+          <input type="text" name="code" placeholder={`${whichUser.usertype} code`} className="user-input"/>
           <br/>
           {/* <label>{` ${whichUser.usertype} code`}</label> */}
           <br/>

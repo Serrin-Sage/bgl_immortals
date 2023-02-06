@@ -7,7 +7,7 @@ import Merits from "../main/Merits"
 const InstructorPage = () => {
   const currentUser = useSelector((state) => state.user.value)
   const [studentList, setStudentList] = useState([])
-  const [showContent, setShowContent] = useState("About")
+  const [showContent, setShowContent] = useState("Student List")
   // const [selectedCategory, setSelectedCategory] = useState("")
 
   console.log(currentUser)
@@ -42,18 +42,18 @@ const InstructorPage = () => {
           <div className="content-tab" id={showContent === "Merits" ? "active-tab" : "inactive"} onClick={() => selectContent("Merits")}>
               Merits
             </div>
-            <div className="content-tab" >
+          <div className="content-tab" id={showContent === "Levels" ? "active-tab" : "inactive"} onClick={() => selectContent("Levels")}>
               Levels
             </div>
-            <div className="content-tab" >
+          <div className="content-tab" id={showContent === "Details" ? "active-tab" : "inactive"} onClick={() => selectContent("Details")}>
               Profile Details
             </div>
           </div>
         <div className="instrcutor-page-content">
           {showContent === "Student List" ? <StudentList studentList={studentList}/> : null}
-          {/* {showContent === "Immortals" ? <Immortals /> : null} */}
+          {showContent === "Levels" ? <div>LEVELS</div> : null}
           {showContent === "Merits" ? <Merits /> : null}
-          {/* {showContent === "Games" ? <Games /> : null} */}
+          {showContent === "Details" ? <div>DETAILS</div>: null}
         </div>
         </div>
         
