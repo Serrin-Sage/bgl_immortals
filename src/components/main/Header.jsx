@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <div className="header-container">
       <Link to="/home" className="header-item">
-        <img src="src/images/GameLabLogo-small.png" className="bgl-logo" alt="header-logo" />
+        <img src="src\images\MainLogoClear.png" className="bgl-logo" alt="header-logo" />
       </Link >
       <div className="header-item">
 

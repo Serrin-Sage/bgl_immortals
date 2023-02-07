@@ -7,6 +7,7 @@ const Merits = () => {
     let characterMerits = []
     let designMerits = []
     let virtueMerits = []
+    let tacticalMerits = []
 
     useEffect(() => {
         const fetchMerits = async () => {
@@ -39,6 +40,10 @@ const Merits = () => {
         return merit.category === "virtue"
     })
 
+    tacticalMerits = allMerits.filter((merit) => {
+        return merit.category === "tactical"
+    })
+
     return (
         <div className="merit-page-container">
             <div className="merit-page-navbar">
@@ -55,6 +60,7 @@ const Merits = () => {
                 <MeritDisplay meritArray={characterMerits} meritCategory="Character" id="Character"/>
                 <MeritDisplay meritArray={designMerits} meritCategory="Design" id="Desgin"/>
                 <MeritDisplay meritArray={virtueMerits} meritCategory="Virtue" id="Virtue"/>
+                <MeritDisplay meritArray={tacticalMerits} meritCategory="Tactical" id="Tactical"/>
             </div>
             <ScrollButton />
         </div>
