@@ -1,20 +1,24 @@
 import Header from "../main/Header"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+import { loginStatus } from "../../features/loginStatus"
+import { login } from "../../features/user"
+import { changeUserType } from "../../features/userType"
+import Cookies from 'js-cookie'
 import { useState, useEffect} from "react"
 import StudentList from "./StudentList"
 import Merits from "../main/Merits"
 
 const InstructorPage = () => {
   const currentUser = useSelector((state) => state.user.value)
+  const whichUser = useSelector((state) => state.usertype.value)
   const [studentList, setStudentList] = useState([])
   const [showContent, setShowContent] = useState("Student List")
-  // const [selectedCategory, setSelectedCategory] = useState("")
 
-  console.log(currentUser)
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    const getStudents = async () => {
-      let req = await fetch(`http://localhost:3000/instructor_students/${currentUser.id}`)
+    const getStudents = async (user) => {
+      let req = await fetch(`http://localhost:3000/instructor_students/${user.id}`)
       let res = await req.json()
       if (req.ok) {
         setStudentList(res)
@@ -23,7 +27,22 @@ const InstructorPage = () => {
       }
     }
 
-    getStudents()
+    const loadUser = async () => {
+      let req = await fetch('http://localhost:3000/instructor_me', {
+        headers: { Authorization: Cookies.get('token') }
+      })
+      let res = await req.json()
+      if (req.ok) {
+        console.log(res)
+        dispatch(loginStatus({ loggedIn: true }))
+        dispatch(login(res.user))
+        dispatch(changeUserType({ usertype: res.user_type }))
+        getStudents(res.user)
+      }
+    }
+    if (Cookies.get('token')) {
+      loadUser()
+    }
   },[])
 
   const selectContent = (clickedCategory) => {

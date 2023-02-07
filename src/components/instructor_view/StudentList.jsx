@@ -18,7 +18,7 @@ const StudentList = ({ studentList }) => {
           {
               studentList.map((student) => {
                   return (
-                      <StudentCard student={student}/>
+                      <StudentCard student={student} key={student.id}/>
                   )
               })
           }

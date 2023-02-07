@@ -1,5 +1,7 @@
-const About = () => {
+import { useSelector } from "react-redux"
 
+const About = () => {
+    
     return (
         <div>
             About

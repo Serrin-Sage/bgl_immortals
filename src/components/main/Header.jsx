@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { getLinkType } from "../../features/linkType"
 import { loginStatus } from "../../features/loginStatus"
 import { logout } from "../../features/user"
+import Cookies from 'js-cookie'
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -11,6 +12,7 @@ const Header = () => {
   const whichUser = useSelector((state) => state.usertype.value)
 
   const handleLogout = () => {
+    Cookies.remove('token')
     dispatch(loginStatus({ loggedIn: false }))
     dispatch(logout())
     navigate("/home")
