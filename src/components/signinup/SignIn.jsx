@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { loginStatus } from "../../features/loginStatus"
 import { login } from "../../features/user"
+import Cookies from 'js-cookie'
 
 const SignIn = () => {
   const navigate = useNavigate()
@@ -28,6 +29,7 @@ const SignIn = () => {
     })
     let res = await req.json()
     if (req.ok) {
+      Cookies.set('token', res.token)
       dispatch(loginStatus({ loggedIn: true }))
       dispatch(login(res))
       navigate(`/${whichUser.usertype}_page`)
