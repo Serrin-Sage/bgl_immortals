@@ -7,6 +7,7 @@ import Cookies from 'js-cookie'
 import { useState, useEffect} from "react"
 import StudentList from "./StudentList"
 import Merits from "../main/Merits"
+import InstructorDetails from "./InstructorDetails"
 
 const InstructorPage = () => {
   const currentUser = useSelector((state) => state.user.value)
@@ -47,7 +48,6 @@ const InstructorPage = () => {
 
   const selectContent = (clickedCategory) => {
     setShowContent(clickedCategory)
-    // setSelectedCategory(clickedCategory)
   }
 
   return (
@@ -72,7 +72,7 @@ const InstructorPage = () => {
           {showContent === "Student List" ? <StudentList studentList={studentList}/> : null}
           {showContent === "Levels" ? <div>LEVELS</div> : null}
           {showContent === "Merits" ? <Merits /> : null}
-          {showContent === "Details" ? <div>DETAILS</div>: null}
+          {showContent === "Details" ? <InstructorDetails />: null}
         </div>
         </div>
         
