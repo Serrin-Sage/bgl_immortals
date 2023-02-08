@@ -54,16 +54,16 @@ const InstructorPage = () => {
         <Header />
         <div className="instructor-page-container">
           <div className="instructor-tabs">
-          <div className="content-tab" id={showContent === "Student List" ? "active-tab" : "inactive"} onClick={() => selectContent("Student List")}>
+            <div className="content-tab" id={showContent === "Student List" ? "active-tab" : "inactive"} onClick={() => selectContent("Student List")}>
               Student List
             </div>
-          <div className="content-tab" id={showContent === "Merits" ? "active-tab" : "inactive"} onClick={() => selectContent("Merits")}>
-              Merits
+            <div className="content-tab" id={showContent === "Merits" ? "active-tab" : "inactive"} onClick={() => selectContent("Merits")}>
+                Merits
             </div>
-          <div className="content-tab" id={showContent === "Levels" ? "active-tab" : "inactive"} onClick={() => selectContent("Levels")}>
+            <div className="content-tab" id={showContent === "Levels" ? "active-tab" : "inactive"} onClick={() => selectContent("Levels")}>
               Levels
             </div>
-          <div className="content-tab" id={showContent === "Details" ? "active-tab" : "inactive"} onClick={() => selectContent("Details")}>
+            <div className="content-tab" id={showContent === "Details" ? "active-tab" : "inactive"} onClick={() => selectContent("Details")}>
               Profile Details
             </div>
           </div>
