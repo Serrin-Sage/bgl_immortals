@@ -34,7 +34,6 @@ const InstructorPage = () => {
       })
       let res = await req.json()
       if (req.ok) {
-        console.log(res)
         dispatch(loginStatus({ loggedIn: true }))
         dispatch(login(res.user))
         dispatch(changeUserType({ usertype: res.user_type }))

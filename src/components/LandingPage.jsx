@@ -13,19 +13,19 @@ const LandingPage = () => {
         <img src="src\images\MainLogo2Clear.png" alt="BGL LOGO" id="main-logo"/>
       </div>
       <div className="">
-        <img src="src\images\PythonPioneersLogo.png" alt="Redmoon Logo" id="redmoon-logo"/>
+        <img src="src\images\PythonLogo.png" alt="Redmoon Logo" id="redmoon-logo"/>
       </div>
       <div className="">
-        <img src="src\images\BorgBattalionClear2.png" alt="Redmoon Logo" id="dyre-logo"/>
+        <img src="src\images\BorgLogo.png" alt="Redmoon Logo" id="dyre-logo"/>
       </div>
       <div className="">
-        <img src="src\images\JSJuggernautLogo.png" alt="Oakfist Logo" id="oakfist-logo"/>
+        <img src="src\images\JavaScriptLogo.png" alt="Oakfist Logo" id="oakfist-logo"/>
       </div>
       <div className="">
-        <img src="src\images\ReactRaidersLogo.png" alt="Parchwik Logo" id="parchwik-logo"/>
+        <img src="src\images\ReactLogo.png" alt="Parchwik Logo" id="parchwik-logo"/>
       </div>
       <div className="">
-        <img src="src\images\RubyRenegadesLogo.png" alt="Irongate Logo" id="irongate-logo"/>
+        <img src="src\images\RubyLogo.png" alt="Irongate Logo" id="irongate-logo"/>
       </div>
     </div>
   )
