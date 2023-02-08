@@ -30,8 +30,9 @@ const SignIn = () => {
     let res = await req.json()
     if (req.ok) {
       Cookies.set('token', res.token)
+      Cookies.set('user_type', res.user_type)
       dispatch(loginStatus({ loggedIn: true }))
-      dispatch(login(res))
+      dispatch(login(res.user))
       navigate(`/${whichUser.usertype}_page`)
     }
     else {
