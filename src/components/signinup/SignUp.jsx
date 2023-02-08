@@ -31,7 +31,8 @@ const SignUp = () => {
         name: e.target.name.value,
         email: e.target.email.value,
         password: e.target.password.value,
-        username: e.target.username.value
+        username: e.target.username.value,
+        child_name: e.target.child_name ? e.target.child_name.value : undefined
       })
     })
     let res = await req.json()
@@ -56,7 +57,7 @@ const SignUp = () => {
           <input type="text" name="name" placeholder="Enter Full Name" className="user-input" />
           {whichUser.usertype === "parent" ? 
             <>
-              <input type="text" name="child-name" placeholder="Enter Child's Full Name" className="user-input"/> 
+              <input type="text" name="child_name" placeholder="Enter Child's Full Name" className="user-input"/> 
               <br/>
               <br/>
             </>
