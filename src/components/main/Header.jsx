@@ -13,6 +13,7 @@ const Header = () => {
 
   const handleLogout = () => {
     Cookies.remove('token')
+    Cookies.remove('user_type')
     dispatch(loginStatus({ loggedIn: false }))
     dispatch(logout())
     navigate("/home")

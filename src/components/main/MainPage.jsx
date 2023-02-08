@@ -10,10 +10,10 @@ import Cookies from 'js-cookie'
 
 const MainPage = () => {
   const dispatch = useDispatch()
-  
+  const userType = Cookies.get('user_type')
   useEffect(() => {
     const loadUser = async () => {
-      let req = await fetch('http://localhost:3000/instructor_me', {
+      let req = await fetch(`http://localhost:3000/${userType}_me`, {
         headers: {Authorization: Cookies.get('token')}
       })
       let res = await req.json()
