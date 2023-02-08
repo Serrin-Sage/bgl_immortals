@@ -74,9 +74,9 @@
 
 .error-message {
     margin: 0;
-    color: rgb(197, 106, 15);
-    font-size: 18px;
+    color: rgb(245, 245, 6);
+    font-size: 20px;
     font-weight: bold;
     letter-spacing: 2px;
-    min-height: 20px;
+    min-height: 22px;
 }

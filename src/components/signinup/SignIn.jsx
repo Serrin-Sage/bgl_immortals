@@ -36,7 +36,6 @@ const SignIn = () => {
     }
     else {
       setShowError(true)
-      console.log(res.error)
     }
   }
   return (
