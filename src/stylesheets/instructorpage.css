@@ -89,3 +89,36 @@
     font-size: 15px;
     padding-top: 2px;
 }
+
+/*** OPTIONS MENU ***/
+.option-container {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    padding: 5px;
+    min-width: 180px;
+    min-height: 30px;
+    color: #fff;
+    border-radius: 3px;
+    left: 1.1%;
+    transform: translateY(40px);
+    
+}
+
+.option-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    min-width: 80px;
+    font-size: 20px;
+}
+
+#edit-btn {
+    background-color: green;
+}
+
+#delete-btn {
+    background-color: red;
+}
