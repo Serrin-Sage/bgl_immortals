@@ -1,6 +1,10 @@
 import StudentCard from "./StudentCard"
+import NewStudentForm from "./NewStudentForm"
+import { useState } from "react"
 
 const StudentList = ({ studentList }) => {
+  const [showStudentForm, setShowStudentForm] = useState(false)
+
   return (
     <div className="student-table-container">
       <table className="student-table">
@@ -24,6 +28,9 @@ const StudentList = ({ studentList }) => {
           }
         </tbody>
       </table>
+      <br/>
+      <button onClick={() => setShowStudentForm(true)}>Add Student</button>
+      {showStudentForm ? <NewStudentForm setShowStudentForm={setShowStudentForm}/> : null }
     </div>
   )
 }
