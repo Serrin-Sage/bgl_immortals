@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { loginStatus } from "../../features/loginStatus"
 import { login } from "../../features/user"
 import { changeUserType } from "../../features/userType"
+import { createList } from "../../features/studentList"
 import Cookies from 'js-cookie'
 import { useState, useEffect} from "react"
 import StudentList from "./StudentList"
@@ -22,7 +23,9 @@ const InstructorPage = () => {
       let req = await fetch(`http://localhost:3000/instructor_students/${user.id}`)
       let res = await req.json()
       if (req.ok) {
-        setStudentList(res)
+        // setStudentList(res)
+        // console.log(res)
+        dispatch(createList(res))
       } else {
         console.log("NO STUDENTS FOUND")
       }
@@ -68,7 +71,7 @@ const InstructorPage = () => {
             </div>
           </div>
         <div className="instrcutor-page-content">
-          {showContent === "Student List" ? <StudentList studentList={studentList}/> : null}
+          {showContent === "Student List" ? <StudentList /> : null}
           {showContent === "Levels" ? <div>LEVELS</div> : null}
           {showContent === "Merits" ? <Merits /> : null}
           {showContent === "Details" ? <InstructorDetails />: null}
