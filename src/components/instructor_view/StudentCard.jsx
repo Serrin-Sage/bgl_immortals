@@ -1,20 +1,25 @@
 import { useState } from "react"
-
+import { useDispatch } from "react-redux"
+import { removeFromList } from "../../features/studentList"
 const StudentCard = ({ student }) => {
+    const dispatch = useDispatch()
+
     const [showOptions, setShowOptions] = useState(false)
     const handleClick = (e) => {
         e.preventDefault()
         setShowOptions(true)
     }
 
-    const deleteStudent = async (clickedStudent) => {
-        let req = await fetch(`http://localhost:3000/students/${clickedStudent.id}`, {
-            method: "DELETE"
-        })
-        let res = req.json()
-        if (req.ok) {
-            console.log("Student Deleted")
-        }
+    const deleteStudent = (clickedStudent) => {
+        dispatch(removeFromList(clickedStudent.id))
+        console.log(clickedStudent)
+        // let req = await fetch(`http://localhost:3000/students/${clickedStudent.id}`, {
+        //     method: "DELETE"
+        // })
+        // if (req.ok) {
+            
+        //     console.log("Student Deleted")
+        // }
     }
 
     const Options = () => {

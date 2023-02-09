@@ -17,8 +17,13 @@ export const studentListSlice = createSlice({
             state.value.list = [...state.value.list, action.payload]
         },
 
+        removeFromList: (state, action) => {
+            console.log(state.value)
+            state.value = state.value.filter(item => item.id !== action.payload)
+        }
+
     }
 })
 
-export const { createList, editList } = studentListSlice.actions
+export const { createList, editList, removeFromList } = studentListSlice.actions
 export default studentListSlice.reducer
