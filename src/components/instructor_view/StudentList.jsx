@@ -7,7 +7,6 @@ const StudentList = () => {
   const [showStudentForm, setShowStudentForm] = useState(false)
   const [showConfirmDelete, setShowConfirmDelete] = useState(false)
   const studentList = useSelector((state) => state.list.value)
-  console.log(studentList)
   return (
     <div className="student-table-container">
       <table className="student-table">
