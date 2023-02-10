@@ -25,3 +25,31 @@
     border: solid 4px #fff;
     border-radius: 10px;
 }
+
+.student-page-content {
+    position: relative;
+    border-top: solid 4px purple;
+    height: 100vh;
+    z-index: 1;
+}
+
+.student-merit-list {
+    display: flex;
+    margin: 2rem;
+}
+
+.student-merit-container {
+    border-radius: 50%;
+    min-height: 100px;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.student-merit {
+    max-height: 80px;
+    margin: 1rem;
+}

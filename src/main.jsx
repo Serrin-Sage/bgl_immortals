@@ -8,6 +8,7 @@ import linkSlice from './features/linkType'
 import userTypeSlice from './features/userType'
 import statusSlice from './features/loginStatus'
 import studentListSlice from './features/studentList'
+import studentSlice from './features/student'
 
 import App from './App'
 import './index.css'
@@ -28,6 +29,7 @@ const store = configureStore({
     usertype: userTypeSlice,
     status: statusSlice,
     list: studentListSlice,
+    student: studentSlice,
   }
 })
 

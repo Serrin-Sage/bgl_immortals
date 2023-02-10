@@ -122,3 +122,14 @@
 #delete-btn {
     background-color: red;
 }
+
+/*** VIEW MERITS ***/
+.merit-view-container {
+    display: flex;
+}
+.view-image {
+    margin: 1rem;
+}
+.view-merit-image {
+    max-height: 60px;
+}
