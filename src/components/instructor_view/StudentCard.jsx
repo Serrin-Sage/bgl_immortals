@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { removeFromList } from "../../features/studentList"
-const StudentCard = ({ student }) => {
+import { selectStudent } from "../../features/student"
+const StudentCard = ({ student, setShowMerits }) => {
     const dispatch = useDispatch()
 
     const [showOptions, setShowOptions] = useState(false)
@@ -36,13 +37,13 @@ const StudentCard = ({ student }) => {
         )
     }
     return (
-        <tr onClick={handleClick} onMouseLeave={() => setShowOptions(false)}>
-           <td>{student.name}</td>
+        <tr onMouseLeave={() => setShowOptions(false)} onClick={() => dispatch(selectStudent(student))}>
+            <td onClick={handleClick}>{student.name}</td>
            <td>{student.user === null ? "------" : student.user.name}</td>
            <td>{student.age}</td>
            <td>{student.immortal_house}</td>
            <td>{student.level}</td>
-           <td>"MERITS"</td>
+            <td onClick={() => setShowMerits(true)}>VIEW</td>
            
             {showOptions ? <Options /> : null}
         </tr>

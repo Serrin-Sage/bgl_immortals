@@ -40,7 +40,6 @@
     border-bottom: solid 4px transparent;
     color: black;
     transform: translateY(2px);
-    z-index: 1;
 }
 
 #active-tab {
@@ -55,7 +54,6 @@
 
 .main-content {
     border-top: solid 4px purple;
-    z-index: 1;
-    
+    z-index: 1;  
 }
 
