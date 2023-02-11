@@ -11,20 +11,6 @@ const StudentList = () => {
 
   const studentList = useSelector((state) => state.list.value)
 
-  const [allMerits, setAllMerits] = useState([])
-
-  useEffect(() => {
-    const fetchMerits = async () => {
-      let req = await fetch("http://localhost:3000/merits")
-      let res = await req.json()
-      if (req.ok) {
-        setAllMerits(res)
-      } else {
-        console.log("Merits not found")
-      }
-    }
-    fetchMerits()
-  }, [])
 
   return (
     <div className="student-table-container">
@@ -52,7 +38,7 @@ const StudentList = () => {
       <br/>
       <button onClick={() => setShowStudentForm(true)}>Add Student</button>
       {showStudentForm ? <NewStudentForm setShowStudentForm={setShowStudentForm}/> : null }
-      {showMerits ? <ViewMerits /> : null}
+      {showMerits ? <ViewMerits setShowMerits={setShowMerits}/> : null}
     </div>
   )
 }
