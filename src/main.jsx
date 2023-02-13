@@ -21,6 +21,7 @@ import './stylesheets/usercheckpage.css'
 import './stylesheets/instructorpage.css'
 import './stylesheets/signinuppage.css'
 import './stylesheets/studentpage.css'
+import './stylesheets/loadingcontent.scss'
 
 const store = configureStore({
   reducer: {

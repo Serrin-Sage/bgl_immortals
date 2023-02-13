@@ -61,24 +61,27 @@ const ViewMerits = ({ setShowMerits }) => {
         })
     }
 
-    const confirmMeritSelection = async () => {
+    const confirmMeritSelection = () => {
         setStudentsMerits((prevState) => {
             return [...prevState, ...meritsToAdd]
         })
+        setMeritsToAdd([])
+        
+    }
+
+    const saveMeritSelection = async () => {
         let req = await fetch(`http://localhost:3000/students/${currentStudent.id}`, {
             method: "PATCH",
             headers: {
-                "Content-Type" : "application/json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                merit_array: {merits: studentsMerits}
+                merit: studentsMerits
             })
         })
         let res = await req.json()
         if (req.ok) {
-            console.log(studentsMerits)
-            setMeritsToAdd([])
-            console.log(res)
+            setShowMerits(false)
         } else {
             console.log(req.error)
         }
@@ -146,9 +149,10 @@ const ViewMerits = ({ setShowMerits }) => {
                         })
                     }
                 </div>
-                <button onClick={() => confirmMeritSelection()}>Confirm</button>
+                <button onClick={() => confirmMeritSelection()}>Add</button>
             </div>
         }
+        <button onClick={saveMeritSelection}>SAVE</button>
     </div>
   )
 }

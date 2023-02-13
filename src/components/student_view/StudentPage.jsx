@@ -8,6 +8,7 @@ import Header from "../main/Header"
 import StudentDetails from "./StudentDetails"
 import Merits from "../main/Merits"
 import StudentMerits from "./StudentMerits"
+import LoadingContent from "../../features/LoadingContent"
 
 const StudentPage = () => {
   const dispatch = useDispatch()
@@ -77,7 +78,7 @@ const StudentPage = () => {
           </div>
         </div>
         : 
-        <div> LOADING</div>
+        <LoadingContent />
       }
     </div>
   )
