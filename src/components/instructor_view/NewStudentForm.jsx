@@ -31,7 +31,7 @@ const NewStudentForm = ({ setShowStudentForm }) => {
                 age: e.target.age.value,
                 immortal_house: "None",
                 level: 0,
-                merit_array: [],
+                merit_array: {merits: []},
                 instructor_id: currentUser.id,
                 number: generatedNum
             })
