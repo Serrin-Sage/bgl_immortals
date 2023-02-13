@@ -22,13 +22,13 @@ const UserCheck = () => {
         <div className="user-check-content">
             
             <div className="user-select" id="parent-student-select" onClick={() => userSelect("parent")}>
-                Parent/Student?
+              <p className="user-select-text">Parent/Student?</p>
             </div>
             <div className="page-break">
 
             </div>
               <div className="user-select" id="instructor-select" onClick={() => userSelect("instructor")}>
-                Instructor/Manager? 
+                <p className="user-select-text">Instructor/Manager?</p>
             </div>
         </div>
     </div>

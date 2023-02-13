@@ -9,6 +9,10 @@
     background-color: blueviolet;
     cursor: default;
 }
+.user-check-container h1 {
+    color: purple;
+    font-size: 45px;
+}
 
 .user-check-content{
     display: flex;
@@ -32,6 +36,27 @@
     min-width: 500px;
     cursor: pointer;
     transition: 0.5s;
+}
+.user-select-text {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+.user-select-text::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.user-select-text:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 #parent-student-select:hover {
