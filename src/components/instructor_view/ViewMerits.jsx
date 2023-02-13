@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 const ViewMerits = ({ setShowMerits }) => {
   const currentStudent = useSelector((state) => state.student.value)
   let merits = currentStudent.merit_array.merits
+  let meritTotal = merits.length
   const [studentsMerits, setStudentsMerits] = useState(merits)
   const [searchMerits, setSearchMerits] = useState(false)
   const [allMerits, setAllMerits] = useState([])
@@ -89,7 +90,7 @@ const ViewMerits = ({ setShowMerits }) => {
 
   return (
     <div className="merit-view-container">
-        <span onClick={() => setShowMerits(false)}>X</span>
+        <span className="exit-button" onClick={() => setShowMerits(false)}>X</span>
         <div className="students-merits">
             {studentsMerits.map((merit) => {
                 return (
@@ -99,60 +100,71 @@ const ViewMerits = ({ setShowMerits }) => {
                 )
             })}
         </div>
+        <div className="merit-view-title">
+            <h2>{currentStudent.name}'s Merits</h2>
+        </div>
+        <div className="merit-total-title">
+            <h2>Toal Merits: {meritTotal}</h2>
+        </div>
         <button className="add-merit-btn" onClick={() => setSearchMerits(true)}>Add Merits</button>
-        {searchMerits ? 
-            <div className="all-merit-container">
-                <input type="text" onChange={filterMerits} placeholder="Search for Merit..."/>
-                <br/>
-                <br/>
-                {defaultView ? 
-                    <div className="merit-serach-results"> 
-                        {allMerits.map((merit) => {
-                            return (
-                                <div onClick={() => addMeritToStaging(merit)}>
-                                    {/* <p>{merit.name}</p> */}
-                                    <img src={merit.image} style={{ maxWidth: 50 }} />
-                                </div>
-                            )
-                        })}
-                    </div>
-                : null
-                }
-                {allMerits.length != 0 && (
-                    <div className="merit-serach-results">
-                        {filteredMerits.map((merit, key) => {
-                            return (
-                                <div onClick={() => addMeritToStaging(merit)}>
-                                    {/* <p>{merit.name}</p> */}
-                                    <img src={merit.image} style={{maxWidth: 50}}/>
-                                </div>
-                            )
-                        })}
-                    </div>
-                )}
-            </div>
-            :
-            null
-        }
-        {meritsToAdd.length > 0 && 
-            <div className="merits-to-add-container">
-                <h1>Merits to be added</h1>
-                <div className="merits-to-add-content">
-                    {
-                        meritsToAdd.map((merit) => {
-                            return (
-                                <div onClick={() => removeAddedMerit(merit)}>
-                                    {/* <p>{merit.name}</p> */}
-                                    <img src={merit.image} style={{ maxWidth: 50 }} />
-                                </div>
-                            )
-                        })
+        <div className="add-merit-container">
+            {searchMerits ? 
+                <div className="all-merit-container">
+                    <input type="text" onChange={filterMerits} placeholder="Search for Merit..."/>
+                    <br/>
+                    <br/>
+                    {defaultView ? 
+                        <div className="merit-serach-results"> 
+                            {allMerits.map((merit) => {
+                                return (
+                                    <div onClick={() => addMeritToStaging(merit)}>
+                                        {/* <p>{merit.name}</p> */}
+                                        <img src={merit.image} style={{ maxWidth: 50 }} />
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    : null
                     }
+                    {allMerits.length != 0 && (
+                        <div className="merit-serach-results">
+                            {filteredMerits.map((merit, key) => {
+                                return (
+                                    <div onClick={() => addMeritToStaging(merit)}>
+                                        {/* <p>{merit.name}</p> */}
+                                        <img src={merit.image} style={{maxWidth: 50}}/>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    )}
                 </div>
-                <button onClick={() => confirmMeritSelection()}>Add</button>
-            </div>
-        }
-        <button onClick={saveMeritSelection}>SAVE</button>
+                :
+                null
+            }
+            {meritsToAdd.length > 0 && 
+                <div className="merits-to-add-container">
+                    <h1>Merits to be added</h1>
+                    <div className="merits-to-add-content">
+                        {
+                            meritsToAdd.map((merit) => {
+                                return (
+                                    <div onClick={() => removeAddedMerit(merit)}>
+                                        {/* <p>{merit.name}</p> */}
+                                        <img src={merit.image} style={{ maxWidth: 50 }} />
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                    <button className="add-merit-btn" onClick={() => confirmMeritSelection()}>ADD</button>
+                </div>
+            }
+        </div>
+        <div>
+
+            <button className="save-button" onClick={saveMeritSelection}>SAVE</button>
+        </div>
     </div>
   )
 }

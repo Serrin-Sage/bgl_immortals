@@ -52,7 +52,7 @@ const StudentList = () => {
         </tbody>
       </table>
       <br/>
-      <button onClick={() => setShowStudentForm(true)}>Add Student</button>
+      <button onClick={() => setShowStudentForm(true)} className="add-merit-btn">Add Student</button>
       {showStudentForm ? <NewStudentForm setShowStudentForm={setShowStudentForm}/> : null }
       {showMerits ? <ViewMerits setShowMerits={setShowMerits}/> : null}
     </div>
