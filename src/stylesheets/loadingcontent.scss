@@ -1,0 +1,132 @@
+// Keyframes
+@keyframes rotateClockwise {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateCounterClockwise {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+
+// Ring
+.ring {
+  background: url("./800px-Five-pointed_star.svg.png");
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  top: 50px;
+  margin-left: -100px;
+	height: 200px;
+  width: 200px;
+  border: 10px solid #666;
+  border-radius: 50%;
+}
+
+.star {
+  transform: translateY(-8px);
+  height: 185px;
+  z-index: 2;
+}
+
+.center-dot {
+
+  height: 80px;
+  width: 80px;
+  background-color: purple;
+  border-radius: 50%;
+}
+
+// Dots
+.dot {
+  position: absolute;
+  height: 250px;
+  width: 40px;
+  top: -25px;
+  left: 50%;
+	margin-left: -20px;
+  animation: rotateClockwise 2s linear infinite;
+  &:before {
+    
+  }
+}
+.dot--one {
+  // animation: rotateClockwise 2s linear infinite;
+  
+  &:before {
+    display: block;
+    content: '';
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 3px rgba(0,0,0,.1);
+    background: #e6a933;
+
+  }
+}
+
+.dot--two {
+  // animation: rotateClockwise 2s linear infinite;
+
+  &:before {
+    background: #009ee3;
+    display: block;
+    content: '';
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transform: translate3d(99px, 71px, 0);
+    box-shadow: 0 2px 3px rgba(0,0,0,.1);
+  }
+}
+
+.dot--three {
+  // animation: rotateClockwise 2s linear infinite;
+  
+  &:before {
+    background: #e63348;
+    display: block;
+    content: '';
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 3px rgba(0,0,0,.1);
+    transform: translate3d(62px, 190px, 0);
+
+    
+  }
+}
+
+.dot--four {
+  //  animation: rotateClockwise 2s linear infinite;
+  
+  &:before {
+    background: #70b942;
+    display: block;
+    content: '';
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transform: translate3d(-64px, 189px, 0);
+    box-shadow: 0 2px 3px rgba(0,0,0,.1);
+  }
+}
+
+.dot--five {
+  //  animation: rotateClockwise 2s linear infinite;
+  
+  &:before {
+    background: black;
+    display: block;
+    content: '';
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transform: translate3d(-99px, 71px, 0);
+    box-shadow: 0 2px 3px rgba(0,0,0,.1);
+  }
+}
