@@ -53,6 +53,8 @@
     padding: 10px;
     border: solid 2px black;
     color: #fff;
+}
+.student-table td:first-child, td:nth-child(4), td:nth-child(6){
     cursor: pointer;
 }
 .student-table td:hover {
@@ -83,12 +85,17 @@
 .exit-button {
     cursor: pointer;
     position: absolute;
-    top: 8px;
-    right: 12px;
+    top: 9px;
+    right: 6px;
     height: 25px;
     width: 25px;
-    font-size: 15px;
+    font-size: 19px;
     padding-top: 2px;
+    font-weight: bold;
+    color: rgb(255, 50, 50);
+    border: solid 2px rgb(255, 50, 50);
+    text-align: center;
+    border-radius: 50%;
 }
 
 /*** OPTIONS MENU ***/
@@ -98,12 +105,12 @@
     justify-content: space-evenly;
     background-color: black;
     padding: 5px;
-    min-width: 180px;
+    min-width: 120px;
     min-height: 30px;
     color: #fff;
     border-radius: 3px;
-    left: 1.1%;
-    transform: translateY(40px);
+    left: 3%;
+    transform: translateY(36px);
     
 }
 
@@ -124,16 +131,34 @@
     background-color: red;
 }
 
+/*** UPDATE BUTTON ***/
+.update-container {
+    position: absolute;
+    display: flex;
+    border: solid 1px purple;
+    border-radius: 5px;
+    height: 20px;
+    width: 20px;
+    padding: 2px;
+    right: 18%;
+    transform: translateY(10px);
+    cursor: pointer;
+}
+.update-image {
+    height: 20px;
+}
+
 /*** VIEW MERITS ***/
 .merit-view-container {
     display: flex;
     position: absolute;
+    align-items: center;
     flex-direction: column;
-    background-color: purple;
+    background-color: rgb(128, 0, 128);
     border: solid 4px black;
     border-radius: 15px;
-    top: 1%;
-    min-height: 570px;
+    top: -5%;
+    min-height: 610px;
     min-width: 800px;
 }
 .students-merits {
@@ -141,6 +166,12 @@
     overflow: auto;
     flex-wrap: wrap;
     min-width: 450px;
+    max-width: 700px;
+    height: 280px;
+    margin-top: 10px;
+    border: solid 2px black;
+    border-radius: 5px;
+    background-color: rgba(137, 43, 226, 0.535);
 }
 .students-merits::-webkit-scrollbar {
     display: none;
@@ -151,8 +182,34 @@
 .view-merit-image {
     max-height: 60px;
 }
+
+.merit-view-title {
+    position: absolute;
+    color: #fff;
+    top: 46%;
+    left: 6%;
+}
+.merit-total-title {
+    position: absolute;
+    color: #fff;
+    top: 46%;
+    right: 6%;
+}
+
 .add-merit-btn {
-    width: 100px;
+    width: 130px;
+    margin: 10px;
+    background-color: rgb(200, 37, 200);
+    border: solid 3px rgb(80, 5, 80);
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.add-merit-container {
+    display: flex;
+    margin-bottom: 1rem;
 }
 .all-merit-container {
 
@@ -160,10 +217,15 @@
 
 .merit-serach-results {
     display: flex;
-    max-width: 400px;
+    width: 400px;
     max-height: 200px;
     flex-wrap: wrap;
     overflow: auto;
+    transition: 0.2s;
+}
+
+.merit-search-name {
+
 }
 
 .merits-to-add-container {
@@ -173,10 +235,61 @@
     flex-direction: column;
     margin: 2rem;
 }
+.merits-to-add-container h1 {
+    color: #fff;
+    margin: 0;
+}
 
 .merits-to-add-content {
     display: flex;
-    border: solid 4px #fff;
+    border: solid 4px rgb(228, 22, 228);
     border-radius: 10px;
     padding: 10px;
+}
+
+.save-button {
+    cursor: pointer;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    background-color: #fff;
+    border: solid 4px rgb(25, 148, 25);
+    border-radius: 10px;
+    color: rgb(25, 148, 25);
+    font-size: 20px;
+    font-weight: bold;
+    bottom: 8px;
+    right: 8px;
+}
+
+/*** ASSIGN HOUSE ***/
+.house-selection-container {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    right: 29%;
+    transform: translateY(46px);
+    background-color: purple;
+    border: solid 4px black;
+    border-radius: 15px;
+    padding: 10px;
+}
+.house-selection {
+    display: flex;
+}
+
+.house-selection img {
+    height: 50px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.house-select-arrow {
+    height: 0px;
+    width: 0px;
+    transform: translate3d(145px, -50px, 0) rotate(90deg);
+    border-top: solid 10px transparent;
+    border-bottom: solid 10px transparent;
+    border-right: solid 10px rgb(0, 0, 0);
+    position: absolute;
 }
