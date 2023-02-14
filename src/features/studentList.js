@@ -14,7 +14,7 @@ export const studentListSlice = createSlice({
         },
 
         editList: (state, action) => {
-            state.value.list = [...state.value.list, action.payload]
+            state.value = [...state.value, action.payload]
         },
 
         removeFromList: (state, action) => {

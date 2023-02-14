@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+import { editList } from "../../features/studentList"
 
 const NewStudentForm = ({ setShowStudentForm }) => {
     const currentUser = useSelector((state) => state.user.value)
-
+    const dispatch = useDispatch()
     const [generatedNum, setGeneratedNum] = useState("")
     const [showError, setShowError] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
@@ -21,7 +22,7 @@ const NewStudentForm = ({ setShowStudentForm }) => {
             setErrorMessage("Code must be filled")
             return
         }
-        let studentreq = await fetch("http://localhost:3000/students", {
+        let req = await fetch("http://localhost:3000/students", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -36,35 +37,38 @@ const NewStudentForm = ({ setShowStudentForm }) => {
                 number: generatedNum
             })
         })
-        let studentres = await studentreq.json()
-        if (studentreq.ok) {
-            console.log(studentres)
+        let res = await req.json()
+        if (req.ok) {
+            console.log("success")
+            dispatch(editList(res))
+            setShowStudentForm(false)
         } else {
-            console.log(studentres.error)
+            setShowError(true)
+            setErrorMessage(res.error)
         }    
     }
 
     return (
     <div className="student-form-container">
-        <div className="student-form">
+        <div className="student-form" onFocus={() => setShowError(false)}>
             <span onClick={() => setShowStudentForm(false)} className="exit-button">X</span>
             <br/>
+            <h1 className="new-student-title">New Student Form</h1>
             <form onSubmit={createNewStudent}>
-                <input type="text" name="name" placeholder="Enter Students Name"/>
+                <input type="text" name="name" placeholder="Enter Students Name" className="user-input" id="student-form-input"/>
                 <br/>
                 <br/>
-                <input type="number" name="age" placeholder="Enter Students Age" />
+                    <input type="number" name="age" placeholder="Enter Students Age" className="user-input" id="student-form-input" />
                 <br/>
                 <br/>
-                <button onClick={generateCode}>Generate Parent Code</button>
+                <button onClick={generateCode} className="code-gen-button">Generate Parent Code</button>
                 <br/>
-                <input type="text" value={generatedNum} name="code" onChange={(e) => setGeneratedNum(e.target.value)}/>
+                    <input type="text" value={generatedNum} name="code" onChange={(e) => setGeneratedNum(e.target.value)} className="user-input" id="student-form-input" />
                 <br/>
                 <br/>
-                <p>{showError ? `${errorMessage}` : null}</p>
-                <input type="submit" value="Create New Student" />
-
+                <input type="submit" value="Create New Student" className="add-btn" id="add-student-btn"/>
             </form>
+                {showError ? <div className="new-student-error">{errorMessage}</div> : <div className="new-student-error-blank"></div>}
         </div>
     </div>
   )

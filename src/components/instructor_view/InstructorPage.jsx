@@ -8,6 +8,7 @@ import Cookies from 'js-cookie'
 import { useState, useEffect} from "react"
 import StudentList from "./StudentList"
 import Merits from "../main/Merits"
+import Levels from "./Levels"
 import InstructorDetails from "./InstructorDetails"
 
 const InstructorPage = () => {
@@ -72,7 +73,7 @@ const InstructorPage = () => {
           </div>
         <div className="instrcutor-page-content">
           {showContent === "Student List" ? <StudentList /> : null}
-          {showContent === "Levels" ? <div>LEVELS</div> : null}
+          {showContent === "Levels" ? <Levels /> : null}
           {showContent === "Merits" ? <Merits /> : null}
           {showContent === "Details" ? <InstructorDetails />: null}
         </div>

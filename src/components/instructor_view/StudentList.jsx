@@ -13,17 +13,22 @@ const StudentList = () => {
 
   const studentList = useSelector((state) => state.list.value)
 
-  const orderByAge = () => {
-    let sortedArray = [...studentList].sort((a,b) => b.age - a.age)
-    dispatch(createList(sortedArray))
+  const orderByNumber = (number) => {
+    const sortFunctions = {
+      age: (a, b) => b.age - a.age,
+      level: (a, b) => b.level - a.level,
+    };
+    const sortedArray = [...studentList].sort(sortFunctions[number]);
+    dispatch(createList(sortedArray));
   }
 
-  const orderByName = () => {
-    let sortedArray = [...studentList].sort((a,b) => {
-      if (a.name < b.name) return -1;
-      if (a.name > b.name) return 1;
-      return 0;
-    })
+  const orderByWord = (word) => {
+    const sortFunctions = {
+      name: (a,b) => {if (a.name < b.name) return -1; if (a.name > b.name) return 1; return 0;},
+      guardian: (a, b) => { if (a.user < b.user) return -1; if (a.user > b.user) return 1; return 0; },
+      house: (a, b) => { if (a.immortal_house < b.immortal_house) return -1; if (a.immortal_house > b.immortal_house) return 1; return 0; }
+    }
+    let sortedArray = [...studentList].sort(sortFunctions[word])
     console.log(sortedArray)
     dispatch(createList(sortedArray))
   }
@@ -33,11 +38,11 @@ const StudentList = () => {
       <table className="student-table">
         <thead>
           <tr>
-            <th onClick={orderByName}>Name</th>
-            <th>Guardian</th>
-            <th onClick={orderByAge}>Age</th>
-            <th>House</th>
-            <th>Level</th>
+            <th onClick={() => orderByWord("name")}>Name</th>
+            <th onClick={() => orderByWord("guardian")}>Guardian</th>
+            <th onClick={() => orderByNumber("age")}>Age</th>
+            <th onClick={() => orderByWord("house")}>House</th>
+            <th onClick={() => orderByNumber("level")}>Level</th>
             <th>Merits</th>
           </tr>
         </thead>
@@ -52,7 +57,7 @@ const StudentList = () => {
         </tbody>
       </table>
       <br/>
-      <button onClick={() => setShowStudentForm(true)} className="add-merit-btn">Add Student</button>
+      <button onClick={() => setShowStudentForm(true)} className="add-btn">Add Student</button>
       {showStudentForm ? <NewStudentForm setShowStudentForm={setShowStudentForm}/> : null }
       {showMerits ? <ViewMerits setShowMerits={setShowMerits}/> : null}
     </div>
