@@ -20,6 +20,8 @@
 }
 
 .instrcutor-page-content {
+    display: flex;
+    justify-content: center;
     border-top: solid 4px purple;
     background-color: blueviolet;
     min-height: 100vh;

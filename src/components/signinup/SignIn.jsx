@@ -12,7 +12,8 @@ const SignIn = () => {
   let userCode = whichUser.usertype === "instructor" ? "instructor_code" : "parent_code"
 
   const [showError, setShowError] = useState(false)
-  
+  const [errorMessage, setErrorMessage] = useState("")
+
   const loginUser = async (e) => {
     e.preventDefault()
     let req = await fetch(`http://localhost:3000/${whichUser.usertype}_login`, {
@@ -37,6 +38,8 @@ const SignIn = () => {
     }
     else {
       setShowError(true)
+      console.log(res.error)
+      setErrorMessage(res.error)
     }
   }
   return (
@@ -54,7 +57,7 @@ const SignIn = () => {
           <input type="password" name="password" placeholder="password" className="user-input" />
           <br/>
           <br/>
-          <p className="error-message">{showError ? "Invalid Credentials" : ""}</p>
+          <p className="error-message">{showError ? `${errorMessage}` : ""}</p>
           <br/>
           <input type="submit" value="LOGIN" className="signinup-btn"/>
         </form>
