@@ -6,10 +6,12 @@ import AssignHouse from "./AssignHouse"
 const StudentCard = ({ student, setShowMerits }) => {
     const dispatch = useDispatch()
 
-    const [showOptions, setShowOptions] = useState(false)
+    const [showDelete, setShowDelete] = useState(false)
+    const [showConfirm, setShowConfirm] = useState(false)
     const [showUpdate, setShowUpdate] = useState(false)
     const [showAssignHouse, setShowAssignHouse] = useState(false)
     const [studentLevel, setStudentLevel] = useState(student.level)
+
     const levels = [
         {level: 0, range: [0,2]},
         {level: 1, range: [3,6]},
@@ -18,35 +20,50 @@ const StudentCard = ({ student, setShowMerits }) => {
         {level: 4, range: [19,25]},
         {level: 5, range: [26,32]},
         {level: 6, range: [33,39]},
-        {level: 7, range: [50,47]},
+        {level: 7, range: [40,47]},
         {level: 8, range: [48,56]},
         {level: 9, range: [57,66]},
         {level: 10, range: [67,77]},
         {level: 11, range: [78,89]},
         {level: 12, range: [90,111]},
     ]
+
     const handleClick = (e) => {
         e.preventDefault()
-        setShowOptions(true)
+        setShowDelete(true)
     }
 
-    const deleteStudent = (clickedStudent) => {
+    const deleteStudent = async (clickedStudent) => {
         dispatch(removeFromList(clickedStudent.id))
-        console.log(clickedStudent)
-        // let req = await fetch(`http://localhost:3000/students/${clickedStudent.id}`, {
-        //     method: "DELETE"
-        // })
-        // if (req.ok) {
-            
-        //     console.log("Student Deleted")
-        // }
+        let req = await fetch(`http://localhost:3000/students/${clickedStudent.id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify({
+                user_id: clickedStudent.id,
+            })
+        })
+        if (req.ok) {
+            console.log("Student Deleted")
+        }
     }
 
-    const Options = () => {
+    const Delete = () => {
         return (
             <div className="option-container">
-                <div className="option-btn" id="delete-btn" onClick={() => deleteStudent(student)}>
+                <div className="option-btn" id="delete-btn" onClick={() => setShowConfirm(true)}>
                     Delete
+                </div>
+            </div>
+        )
+    }
+
+    const ConfirmDelete = () => {
+        return (
+            <div className="confirm-container">
+                <div className="option-btn" id="confirm-delete" onClick={() => deleteStudent(student)}>
+                    Confirm?
                 </div>
             </div>
         )
@@ -56,7 +73,7 @@ const StudentCard = ({ student, setShowMerits }) => {
         return (
             <div className="update-container" onMouseOver={() => setShowUpdate(true)} onMouseOut={() => setShowUpdate(false)}>
                 {showUpdate ? 
-                    <img src="src\images\update.png" className="update-image" onClick={() => updateMerits()}/>
+                    <img src="src\images\update.png" className="update-image" onClick={updateMerits}/>
                 :
                     null
                 }
@@ -64,13 +81,13 @@ const StudentCard = ({ student, setShowMerits }) => {
         )
     }
     
-    const updateMerits = async() => {
+    const updateMerits = async () => {
+        let newLevel = 0
         let meritTotal = student.merit_array.merits.length;
-        let testTotal = 0
         for (const level of levels) {
             if (meritTotal >= level.range[0] && meritTotal <= level.range[1]) {
                 setStudentLevel(level.level);
-                testTotal = level.level
+                newLevel = level.level
                 break;
             }
         }
@@ -80,7 +97,7 @@ const StudentCard = ({ student, setShowMerits }) => {
                 "Content-Type" : "application/json"
             },
             body: JSON.stringify({
-                level: testTotal
+                level: newLevel
             })
         })
         let res =  req.json()
@@ -92,8 +109,9 @@ const StudentCard = ({ student, setShowMerits }) => {
     }
 
     const removePopUps = () => {
-        setShowOptions(false)
+        setShowDelete(false)
         setShowAssignHouse(false)
+        setShowConfirm(false)
     }
 
     return (
@@ -105,7 +123,8 @@ const StudentCard = ({ student, setShowMerits }) => {
            <td>{studentLevel}</td>
            <td onClick={() => setShowMerits(true)}>VIEW</td>
            
-            {showOptions ? <Options /> : null}
+            {showDelete ? <Delete /> : null}
+            {showConfirm ? <ConfirmDelete /> : null}
             {showAssignHouse ? <AssignHouse setShowAssignHouse={setShowAssignHouse} student={student}/> : null}
             <UpdateStudent />
 

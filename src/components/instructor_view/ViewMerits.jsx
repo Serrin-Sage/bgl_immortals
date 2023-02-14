@@ -106,7 +106,7 @@ const ViewMerits = ({ setShowMerits }) => {
         <div className="merit-total-title">
             <h2>Toal Merits: {meritTotal}</h2>
         </div>
-        <button className="add-merit-btn" onClick={() => setSearchMerits(true)}>Add Merits</button>
+        <button className="add-btn" onClick={() => setSearchMerits(true)}>Add Merits</button>
         <div className="add-merit-container">
             {searchMerits ? 
                 <div className="all-merit-container">
@@ -157,7 +157,7 @@ const ViewMerits = ({ setShowMerits }) => {
                             })
                         }
                     </div>
-                    <button className="add-merit-btn" onClick={() => confirmMeritSelection()}>ADD</button>
+                    <button className="add-btn" onClick={() => confirmMeritSelection()}>ADD</button>
                 </div>
             }
         </div>

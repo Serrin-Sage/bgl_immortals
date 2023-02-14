@@ -1,4 +1,4 @@
-const LoadingContent = () => {
+const LoadingContent = ({ size }) => {
   return (
     <div>
         <div className="ring">
