@@ -5,13 +5,13 @@ import { selectStudent } from "../../features/student"
 import AssignHouse from "./AssignHouse"
 const StudentCard = ({ student, setShowMerits }) => {
     const dispatch = useDispatch()
-
+    
     const [showDelete, setShowDelete] = useState(false)
     const [showConfirm, setShowConfirm] = useState(false)
     const [showUpdate, setShowUpdate] = useState(false)
     const [showAssignHouse, setShowAssignHouse] = useState(false)
     const [studentLevel, setStudentLevel] = useState(student.level)
-
+    const [studentHouse, setStudentHouse] = useState(student.immortal_house)
     const levels = [
         {level: 0, range: [0,2]},
         {level: 1, range: [3,6]},
@@ -119,13 +119,13 @@ const StudentCard = ({ student, setShowMerits }) => {
            <td onClick={handleClick}>{student.name}</td>
            <td>{student.user === null ? "------" : student.user.name}</td>
            <td>{student.age}</td>
-           <td onClick={() => setShowAssignHouse(true)}>{student.immortal_house}</td>
+           <td onClick={() => setShowAssignHouse(true)}>{studentHouse}</td>
            <td>{studentLevel}</td>
            <td onClick={() => setShowMerits(true)}>VIEW</td>
            
             {showDelete ? <Delete /> : null}
             {showConfirm ? <ConfirmDelete /> : null}
-            {showAssignHouse ? <AssignHouse setShowAssignHouse={setShowAssignHouse} student={student}/> : null}
+            {showAssignHouse ? <AssignHouse setShowAssignHouse={setShowAssignHouse} student={student} setStudentHouse={setStudentHouse}/> : null}
             <UpdateStudent />
 
         </tr>

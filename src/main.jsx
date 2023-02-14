@@ -22,6 +22,7 @@ import './stylesheets/instructorpage.css'
 import './stylesheets/signinuppage.css'
 import './stylesheets/studentpage.css'
 import './stylesheets/loadingcontent.scss'
+import './stylesheets/hoverstyle.scss'
 
 const store = configureStore({
   reducer: {

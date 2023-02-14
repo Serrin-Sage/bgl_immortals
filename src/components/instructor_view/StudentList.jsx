@@ -8,7 +8,6 @@ import { createList } from "../../features/studentList"
 const StudentList = () => {
   const dispatch = useDispatch()
   const [showStudentForm, setShowStudentForm] = useState(false)
-  const [showConfirmDelete, setShowConfirmDelete] = useState(false)
   const [showMerits, setShowMerits] = useState(false)
 
   const studentList = useSelector((state) => state.list.value)

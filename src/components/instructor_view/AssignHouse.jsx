@@ -1,4 +1,4 @@
-const AssignHouse = ({ setShowAssignHouse, student }) => {
+const AssignHouse = ({ setShowAssignHouse, student, setStudentHouse }) => {
 
   const assignStudentToHouse = async (houseSelection) => {
       let req = await fetch(`http://localhost:3000/assign_house/${student.id}`, {
@@ -13,6 +13,7 @@ const AssignHouse = ({ setShowAssignHouse, student }) => {
       let res = await req.json()
       if (req.ok) {
         console.log(res)
+        setStudentHouse(houseSelection)
         setShowAssignHouse(false)
       } else {
         console.log(res.error)
