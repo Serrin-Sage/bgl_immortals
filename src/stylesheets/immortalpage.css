@@ -14,7 +14,30 @@
 }
 
 .immortal-house-content {
+    display: flex;
+    align-items: center;
     margin: 1.5rem;
+    cursor: default;
+}
+.immortal-description {
+    border: solid 2px rgb(174, 174, 174);
+    box-shadow: 0 0 20px 2px black;
+    background-color: rgba(147, 125, 169, 0.343);
+    border-radius: 20px;
+    min-width: 550px;
+    min-height: 150px;
+    margin: 0 0 0 1rem;
+    font-size: 20px;
+}
+.immortal-adjectives {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.immortal-description p {
+    width: 550px;
+    padding: 0 1rem 0 1rem;
 }
 
 .immortal-page-icon {

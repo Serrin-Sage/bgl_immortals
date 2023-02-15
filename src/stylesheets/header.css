@@ -9,7 +9,15 @@
 }
 
 .bgl-logo {
-    max-height: 150px;
+    max-height: 100px;
+    margin: 1rem;
+    border: solid 2px transparent;
+    transition: 0.2s;
+    border-radius: 15px;
+}
+.bgl-logo:hover {
+    box-shadow: 0 0 10px 2px #ffffff6c;
+    transform: scale(1.05);
 }
 
 .link-container {

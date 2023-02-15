@@ -8,6 +8,7 @@ import Header from "../main/Header"
 import StudentDetails from "./StudentDetails"
 import Merits from "../main/Merits"
 import StudentMerits from "./StudentMerits"
+import Achievements from "./Achievements"
 import LoadingContent from "../../features/LoadingContent"
 
 const StudentPage = () => {
@@ -82,7 +83,7 @@ const StudentPage = () => {
             </div>
             <div className="student-page-content">
               {showContent === "Your Merits" ? <StudentMerits studentDetails={studentDetails} /> : null}
-              {/* {showContent === "Levels" ? <div>LEVELS</div> : null} */}
+              {showContent === "Achievements" ? <Achievements /> : null}
               {showContent === "Merits" ? <Merits /> : null}
             </div>
           </div>

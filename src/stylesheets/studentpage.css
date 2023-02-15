@@ -92,3 +92,8 @@
     margin: 1rem;
     border: solid 2px transparent;
 }
+
+.achievement-page-container {
+    display: flex;
+    justify-content: center;
+}
