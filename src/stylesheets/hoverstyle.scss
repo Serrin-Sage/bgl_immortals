@@ -1,79 +1,21 @@
-/* Settings */
-$c_0: #000000;
-$c_1: #353540;
-
-.l-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
-    width: 100%;
-    max-width: 1200px;
-    padding: 30px;
-
-    @media screen and (max-width: 760px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.student-merit-container {
+    margin: 4px;
+    transform: scale(1);
 }
 
-.b-game-card {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    padding-bottom: 150%;
-    perspective: 1000px;
-    transition: transform 0.35s;
-
-    .cover {
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        // background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-        background-size: cover;
-        box-shadow: 0px 0px 8px 1px #000000ad;
-        perspective-origin: 50% 50%;
-        transform-style: preserve-3d;
-        transform-origin: center;
-        will-change: transform;
-        transition: transform 0.5s, filter 0.35s;
-
-        /* Gloss */
-        .gloss {
-            position: absolute;
-            pointer-events: none;
-            top: 0;
-            left: 0;
-            width: 20em;
-            height: 20em;
-            margin-left: -6em;
-            margin-top: -17em;
-            background: radial-gradient(circle farthest-corner at 50% 50%,
-                    rgba(255, 255, 255, 0.7) 0%,
-                    rgba(255, 255, 255, 0.5) 33%,
-                    rgba(255, 255, 255, 0) 60%,
-                    rgba(255, 255, 255, 0) 100%);
-            opacity: 0;
-            will-change: transform;
-            transition: opacity 0.21s ease-in-out;
-        }
-    }
-
-    &:hover {
-        transform: scale(1.1);
-        z-index: 10;
-
-        .cover {
-            box-shadow: 10px 20px 32px 1px #000000ab;
-            transition: none;
-
-            .gloss {
-                opacity: 0.5;
-            }
-        }
-    }
+.student-merit-container:hover {
+    z-index: 10;
+    transform: scale(1.3);
 }
 
-//COPIED FROM https: //codepen.io/jarvis-ai/pen/GRJpQWO
+.student-merit-container,
+.student-merit-container img {
+    transition: all 250ms ease-out;
+}
+
+.student-merit-image {
+    border-radius: 50%;
+}
+
+//Source Code:
+//https: //codepen.io/nelsonr/pen/WNQaZPb

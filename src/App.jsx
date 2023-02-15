@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
 import LandingPage from './components/LandingPage'
 import MainPage from './components/main/MainPage'
 import UserCheck from './components/signinup/UserCheck'
@@ -8,6 +9,7 @@ import InstructorPage from './components/instructor_view/InstructorPage'
 import StudentPage from './components/student_view/StudentPage'
 
 function App() {
+  
 
   return (
     <div className="App">

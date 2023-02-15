@@ -23,10 +23,18 @@ const StudentPage = () => {
       if (req.ok) {
         setStudentDetails(res[0])
         setContentLoaded(true)
+        const script = document.createElement('script');
+
+        script.src = "src/features/hoverEffect.js";
+        script.async = true;
+
+        document.body.appendChild(script);
       } else {
         console.log(res.error)
       }
     }
+    
+    
     const loadUser = async () => {
       let req = await fetch('http://localhost:3000/parent_me', {
         headers: {Authorization: Cookies.get('token')}
@@ -43,6 +51,8 @@ const StudentPage = () => {
     if (Cookies.get('token')) {
       loadUser()
     }
+
+    
   },[])
 
   return (

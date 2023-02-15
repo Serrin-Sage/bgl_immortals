@@ -64,7 +64,7 @@
 .student-page-content {
     position: relative;
     border-top: solid 4px purple;
-    height: 100vh;
+    min-height: 100vh;
     z-index: 1;
 }
 
@@ -90,26 +90,5 @@
 .student-merit {
     max-height: 80px;
     margin: 1rem;
+    border: solid 2px transparent;
 }
-.student-merit-container:hover {
-    transform: scale(1.15);
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.412);
-}
-
-
-/* .gloss {
-    position: absolute;
-    pointer-events: none;
-    width: 20em;
-    height: 20em;
-    margin-left: -6em;
-    margin-top: -17em;
-    background: radial-gradient(circle farthest-corner at 50% 50%,
-            rgba(255, 255, 255, 0.7) 0%,
-            rgba(255, 255, 255, 0.5) 33%,
-            rgba(255, 255, 255, 0) 60%,
-            rgba(255, 255, 255, 0) 100%);
-    opacity: 0;
-    will-change: transform;
-    transition: opacity 0.21s ease-in-out;
-} */
