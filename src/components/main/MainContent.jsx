@@ -30,7 +30,7 @@ const MainContent = () => {
                     About
                 </div>
                 <div className="content-tab" id={showContent === "Endless" ? "active-tab" : "inactive"} onClick={() => selectContent("Endless")}>
-                    The Endless
+                    The Houses
                 </div>
                 <div className="content-tab" id={showContent === "Merits" ? "active-tab" : "inactive"} onClick={() => selectContent("Merits")}>
                     Merits

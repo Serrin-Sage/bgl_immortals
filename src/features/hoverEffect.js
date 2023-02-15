@@ -12,7 +12,7 @@ function Card3D(card, ev) {
     let mouseY = ev.offsetY;
     let rotateY = map(mouseX, 0, 180, -25, 25);
     let rotateX = map(mouseY, 0, 250, 25, -25);
-    let brightness = map(mouseY, 0, 250, 1.5, 0.5);
+    let brightness = map(mouseY, 0, 250, 1.5, 0.4);
 
     img.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     img.style.filter = `brightness(${brightness})`;

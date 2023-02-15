@@ -57,7 +57,8 @@ const SignIn = () => {
           <input type="password" name="password" placeholder="password" className="user-input" />
           <br/>
           <br/>
-          <p className="error-message">{showError ? `${errorMessage}` : ""}</p>
+          {/* <p className="error-message">{showError ? `${errorMessage}` : ""}</p> */}
+          {showError ? <div className="error-message">{errorMessage}</div> : <div className="error-message-blank"></div>}
           <br/>
           <input type="submit" value="LOGIN" className="signinup-btn"/>
         </form>
