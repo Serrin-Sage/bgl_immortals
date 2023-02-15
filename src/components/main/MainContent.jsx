@@ -35,18 +35,12 @@ const MainContent = () => {
                 <div className="content-tab" id={showContent === "Merits" ? "active-tab" : "inactive"} onClick={() => selectContent("Merits")}>
                     Merits
                 </div>
-                <div className="content-tab" id={showContent === "Games" ? "active-tab" : "inactive"} onClick={() => selectContent("Games")}>
-                    Games
-                </div>
-                {/* <div className="content-tab">
-                    Test
-                </div> */}
+                
             </div>
             <div className="main-content">
                 {showContent === "About" ? <About /> : null }
                 {showContent === "Endless" ? <Immortals /> : null }
                 {showContent === "Merits" ? <Merits /> : null }
-                {showContent === "Games" ? <Games /> : null }
             </div>
         </div>
     )

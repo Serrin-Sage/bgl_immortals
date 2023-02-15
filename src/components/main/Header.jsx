@@ -23,7 +23,7 @@ const Header = () => {
     <div className="header-container">
       <div className="header-item">
         <Link to="/home" >
-          <img src="src\images\MainLogoClear.png" className="bgl-logo" alt="header-logo" />
+          <img src="src\images\MainLogo3Clear.png" className="bgl-logo" alt="header-logo" />
         </Link >
       </div>
       <div className="header-item">

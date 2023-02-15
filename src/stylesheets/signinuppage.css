@@ -26,6 +26,9 @@
     margin-bottom: 1.5rem;
     transform: translateX(-80px);
 }
+#sign-in-title {
+    transform: translateX(0px);
+}
 .signinup-content label {
     position: absolute;
     padding: 0 12px;
