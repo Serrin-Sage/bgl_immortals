@@ -73,7 +73,7 @@ const SignUp = () => {
           <input type="text" name="username" placeholder="Create username (optional)" className="user-input" />
           <br/>
           <br/>
-          <p className="error-message">{showError ? errorMessage : ""}</p>
+          {showError ? <div className="error-message">{errorMessage}</div> : <div className="error-message-blank"></div>}
           <br/>
           <input type="submit" value="Register" className="signinup-btn" />
         </form>

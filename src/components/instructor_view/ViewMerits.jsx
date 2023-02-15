@@ -13,6 +13,7 @@ const ViewMerits = ({ setShowMerits }) => {
   const [defaultView, setDefaultView] = useState(true)
   const [meritInput, setMeritInput] = useState("")
   const [meritsToAdd, setMeritsToAdd] = useState([])
+  const [saveReminder, setSaveReminder] = useState(false)
 
   useEffect(() => {
         const fetchMerits = async () => {
@@ -67,6 +68,7 @@ const ViewMerits = ({ setShowMerits }) => {
             return [...prevState, ...meritsToAdd]
         })
         setMeritsToAdd([])
+        setSaveReminder(true)
         
     }
 
@@ -107,17 +109,16 @@ const ViewMerits = ({ setShowMerits }) => {
             <h2>Toal Merits: {meritTotal}</h2>
         </div>
         <button className="add-btn" onClick={() => setSearchMerits(true)}>Add Merits</button>
-        <div className="add-merit-container">
+        <div className="add-merit-container" >
             {searchMerits ? 
-                <div className="all-merit-container">
-                    <input type="text" onChange={filterMerits} placeholder="Search for Merit..."/>
-                    <br/>
+                  <div className="all-merit-container" onMouseOver={() => setSaveReminder(false)}>
+                    <input type="text" onChange={filterMerits} placeholder="Search for Merit..." className="search-merit-input"/>
                     <br/>
                     {defaultView ? 
                         <div className="merit-serach-results"> 
                             {allMerits.map((merit) => {
                                 return (
-                                    <div onClick={() => addMeritToStaging(merit)}>
+                                    <div onClick={() => addMeritToStaging(merit)} className="merit-search-div">
                                         {/* <p>{merit.name}</p> */}
                                         <img src={merit.image} style={{ maxWidth: 50 }} />
                                     </div>
@@ -130,7 +131,7 @@ const ViewMerits = ({ setShowMerits }) => {
                         <div className="merit-serach-results">
                             {filteredMerits.map((merit, key) => {
                                 return (
-                                    <div onClick={() => addMeritToStaging(merit)}>
+                                    <div onClick={() => addMeritToStaging(merit)} className="merit-search-div">
                                         {/* <p>{merit.name}</p> */}
                                         <img src={merit.image} style={{maxWidth: 50}}/>
                                     </div>
@@ -149,7 +150,7 @@ const ViewMerits = ({ setShowMerits }) => {
                         {
                             meritsToAdd.map((merit) => {
                                 return (
-                                    <div onClick={() => removeAddedMerit(merit)}>
+                                    <div onClick={() => removeAddedMerit(merit)} className="merit-remove-div">
                                         {/* <p>{merit.name}</p> */}
                                         <img src={merit.image} style={{ maxWidth: 50 }} />
                                     </div>
@@ -160,6 +161,7 @@ const ViewMerits = ({ setShowMerits }) => {
                     <button className="add-btn" onClick={() => confirmMeritSelection()}>ADD</button>
                 </div>
             }
+              {saveReminder ? <div className="merits-to-add-container"><h1>Merits added, Click Save!</h1></div> : null}
         </div>
         <div>
 
