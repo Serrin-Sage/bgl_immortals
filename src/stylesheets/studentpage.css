@@ -51,9 +51,11 @@
 }
 .profile-level {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    flex-direction: column;
+}
+.profile-level div {
+    text-align: center;
 }
 .profile-level h1 {
     text-decoration: none;

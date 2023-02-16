@@ -3,7 +3,7 @@ import { useSelector } from "react-redux"
 const StudentDetails = ({ studentDetails }) => {
 
   const currentUser = useSelector((state) => state.user.value)
-
+  let meritTotal = studentDetails.merit_array.merits.length
   return (
     <div className="student-details-container">
       <div className="student-details-content">
@@ -14,8 +14,14 @@ const StudentDetails = ({ studentDetails }) => {
           <p>Email: {currentUser.email}</p> 
         </div>
         <div className="profile-level">
-          <h2>You are Level:</h2>
-          <h1>{studentDetails.level}</h1>
+          <div>
+            <h2>You are Level:</h2>
+            <h1>{studentDetails.level}</h1>
+          </div>
+          <div>
+            <h2>You have:</h2>
+            <h1>{meritTotal} Merits</h1>
+          </div>
         </div>
       </div>
     </div>

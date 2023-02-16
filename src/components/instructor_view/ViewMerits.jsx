@@ -14,7 +14,7 @@ const ViewMerits = ({ setShowMerits }) => {
   const [meritInput, setMeritInput] = useState("")
   const [meritsToAdd, setMeritsToAdd] = useState([])
   const [saveReminder, setSaveReminder] = useState(false)
-
+  
   useEffect(() => {
         const fetchMerits = async () => {
             let req = await fetch("http://localhost:3000/merits")
@@ -90,6 +90,14 @@ const ViewMerits = ({ setShowMerits }) => {
         }
     }
 
+  const ViewSingleMerit = ({merit}) => {
+    return (
+        <div onClick={() => addMeritToStaging(merit)} className="merit-search-div">
+            {/* <p>{merit.name}</p> */}
+            <img src={merit.image} style={{ maxWidth: 50 }} />
+        </div>
+    )
+  }
   return (
     <div className="merit-view-container">
         <span className="exit-button" onClick={() => setShowMerits(false)}>X</span>
@@ -118,10 +126,7 @@ const ViewMerits = ({ setShowMerits }) => {
                         <div className="merit-serach-results"> 
                             {allMerits.map((merit) => {
                                 return (
-                                    <div onClick={() => addMeritToStaging(merit)} className="merit-search-div">
-                                        {/* <p>{merit.name}</p> */}
-                                        <img src={merit.image} style={{ maxWidth: 50 }} />
-                                    </div>
+                                    <ViewSingleMerit merit={merit}/>
                                 )
                             })}
                         </div>
@@ -131,10 +136,7 @@ const ViewMerits = ({ setShowMerits }) => {
                         <div className="merit-serach-results">
                             {filteredMerits.map((merit, key) => {
                                 return (
-                                    <div onClick={() => addMeritToStaging(merit)} className="merit-search-div">
-                                        {/* <p>{merit.name}</p> */}
-                                        <img src={merit.image} style={{maxWidth: 50}}/>
-                                    </div>
+                                    <ViewSingleMerit merit={merit} />
                                 )
                             })}
                         </div>

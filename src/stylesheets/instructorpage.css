@@ -429,3 +429,24 @@
     border-right: solid 10px rgb(0, 0, 0);
     position: absolute;
 }
+
+
+/*** INSTRUCTOR DETAILS ***/
+.instructor-details-container {
+    display: flex;
+    margin: 1rem;
+}
+.instructor-details-content {
+    border: solid 4px purple;
+    border-radius: 10px;
+    min-width: 600px;
+    max-height: 300px;
+    box-shadow: 5px 5px 20px 2px black;
+}
+.instructor-details {
+    padding: 10px;
+    border: solid 4px purple;
+    border-radius: 10px;
+    margin: 1rem;
+    color: #fff;
+}
