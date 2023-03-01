@@ -20,6 +20,7 @@
     cursor: default;
 }
 .immortal-description {
+    color: #ffffffee;
     border: solid 2px rgb(174, 174, 174);
     box-shadow: 0 0 20px 2px black;
     background-color: rgba(147, 125, 169, 0.343);
