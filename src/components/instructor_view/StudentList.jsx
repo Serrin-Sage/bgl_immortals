@@ -38,6 +38,7 @@ const StudentList = () => {
         <thead>
           <tr>
             <th onClick={() => orderByWord("name")}>Name</th>
+            <th id="pronouns">Pronouns</th>
             <th onClick={() => orderByWord("guardian")}>Guardian</th>
             <th onClick={() => orderByNumber("age")}>Age</th>
             <th onClick={() => orderByWord("house")}>House</th>

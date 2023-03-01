@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux"
 import { removeFromList } from "../../features/studentList"
 import { selectStudent } from "../../features/student"
 import AssignHouse from "./AssignHouse"
+import UpdateAge from "./UpdateAge"
 const StudentCard = ({ student, setShowMerits }) => {
     const dispatch = useDispatch()
     
@@ -10,6 +11,7 @@ const StudentCard = ({ student, setShowMerits }) => {
     const [showConfirm, setShowConfirm] = useState(false)
     const [showUpdate, setShowUpdate] = useState(false)
     const [showAssignHouse, setShowAssignHouse] = useState(false)
+    const [showAgeUpdate, setShowAgeUpdate] = useState(false)
     const [studentLevel, setStudentLevel] = useState(student.level)
     const [studentHouse, setStudentHouse] = useState(student.immortal_house)
     const levels = [
@@ -112,13 +114,15 @@ const StudentCard = ({ student, setShowMerits }) => {
         setShowDelete(false)
         setShowAssignHouse(false)
         setShowConfirm(false)
+        setShowAgeUpdate(false)
     }
 
     return (
         <tr onMouseLeave={() => removePopUps()} onClick={() => dispatch(selectStudent(student))}>
            <td onClick={handleClick}>{student.name}</td>
+           <td id="pronouns">{student.pronoun}</td>
            <td>{student.user === null ? "------" : student.user.name}</td>
-           <td>{student.age}</td>
+           <td onClick={() => setShowAgeUpdate(true)}>{student.age}</td>
            <td onClick={() => setShowAssignHouse(true)}>{studentHouse}</td>
            <td>{studentLevel}</td>
            <td onClick={() => setShowMerits(true)}>VIEW</td>
@@ -126,6 +130,7 @@ const StudentCard = ({ student, setShowMerits }) => {
             {showDelete ? <Delete /> : null}
             {showConfirm ? <ConfirmDelete /> : null}
             {showAssignHouse ? <AssignHouse setShowAssignHouse={setShowAssignHouse} student={student} setStudentHouse={setStudentHouse}/> : null}
+            {showAgeUpdate ? <UpdateAge setShowAgeUpdate={setShowAgeUpdate} student={student}/> : null}
             <UpdateStudent />
 
         </tr>

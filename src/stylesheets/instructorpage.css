@@ -50,7 +50,11 @@
     background-color: #e2992b;
     color: #fff;
 }
-.student-table th:first-child, th:nth-child(1), th:nth-child(2), th:nth-child(3), th:nth-child(4), th:nth-child(5) {
+#pronouns {
+    min-width: 100px;
+    font-size: 20px;
+}
+.student-table th:first-child, th:nth-child(4), th:nth-child(5), th:nth-child(6) {
     cursor: pointer;
 }
 
@@ -60,7 +64,7 @@
     border: solid 2px black;
     color: #fff;
 }
-.student-table td:first-child, td:nth-child(4), td:nth-child(6){
+.student-table td:first-child, td:nth-child(5), td:nth-child(7){
     cursor: pointer;
 }
 .student-table td:hover {
@@ -394,12 +398,24 @@
     transform: scale(0.97);
 }
 
+/*** UPDATE AGE ***/
+.age-menu {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    right: 26%;
+    transform: translateY(46px);
+    background-color: rgb(128, 0, 0);
+    border: solid 4px black;
+    border-radius: 15px;
+    padding: 10px;
+}
 /*** ASSIGN HOUSE ***/
 .house-selection-container {
     display: flex;
     position: absolute;
     align-items: center;
-    right: 29%;
+    right: 26%;
     transform: translateY(46px);
     background-color: purple;
     border: solid 4px black;
