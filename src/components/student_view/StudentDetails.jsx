@@ -8,7 +8,7 @@ const StudentDetails = ({ studentDetails }) => {
     <div className="student-details-container">
       <div className="student-details-content">
         <h1>{studentDetails.name}</h1>
-        <h2>{studentDetails.immortal_house}</h2>
+        <h2>House: {studentDetails.immortal_house}</h2>
         <div className="profile-info-names">
           <p>Guardian: {currentUser.name}</p> 
           <p>Email: {currentUser.email}</p> 
